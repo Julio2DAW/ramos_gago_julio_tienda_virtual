@@ -88,6 +88,11 @@ main{
     padding: 30px 20px;
 }
 
+#divProducto, #divCarrito{
+
+    display: none;
+}
+
 .cajas{
 
     width: 100%;
