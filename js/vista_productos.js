@@ -49,7 +49,8 @@ export class VistaProductos{
 
                 let img = document.createElement('img')
                 caja.appendChild(img)
-                img.textContent = producto.imagen
+                img.src=producto.imagen
+                //img.textContent = producto.imagen
                 
                 let p = document.createElement('p')
                 caja.appendChild(p)
