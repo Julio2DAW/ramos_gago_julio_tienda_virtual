@@ -1,6 +1,6 @@
 
 
-body{
+body {
 
     background-image: url("../img/fondo.jpg");
     background-size: cover;
@@ -9,21 +9,29 @@ body{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-header{
+header {
 
     background-color: black;
     color: white;
     text-align: center;
-    font-size: 40px;
     padding: 20px 0;
 }
 
-h1{
+h1 {
 
     font-family: 'Bebas Neue';
+    font-size: 40px;
+}
+
+h2 {
+
+    font-family: 'Bebas Neue';
+    font-size: 35px;
+    text-align: center;
 }
 
 .header-div li {
+
     text-align: center;
     width: 100%;
     margin-bottom: 3px !important;
@@ -33,6 +41,7 @@ h1{
 }
   
 .header-div i {
+
     display: block;
     margin: 0 auto 10px auto;
     width: 32px;
@@ -47,6 +56,7 @@ h1{
 }
 
 .header-div a {
+
     text-decoration: none;
     width: 100%;
     height: 100%;
@@ -56,6 +66,7 @@ h1{
 }
 
 .header-div a span {
+
     color: white;
     font-size: 15px;
     padding: 5px 0 10px 0;
@@ -65,10 +76,12 @@ h1{
 }
 
 .carrito {
+
     position: relative;
 }
 
 #menucarrito {
+
     position: absolute;
     top: 0;
     left: 50.5%;
@@ -83,17 +96,18 @@ h1{
     padding: 2px;
 }
 
-main{
+main {
 
     padding: 30px 20px;
+    min-height: 450px;
 }
 
-#divProducto, #divCarrito{
+#divProducto, #divCarrito {
 
     display: none;
 }
 
-.cajas{
+.cajas {
 
     width: 100%;
     display: flex;
@@ -101,7 +115,8 @@ main{
     justify-content: center;
 }
 
-.caja{
+.caja {
+
     text-align: center;
     margin: 20px;
     padding-bottom: 10px;
@@ -114,7 +129,8 @@ main{
     -o-border-radius: 20px;
 }
 
-.caja img{
+.caja img {
+
     width: 500px;
     height: 300px;
     border-radius: 20px;
@@ -124,7 +140,30 @@ main{
     -o-border-radius: 20px;
 }
 
-.caja p, .caja button{
+.caja p, .caja button {
 
     margin-top: 10px;
+}
+
+.caja button {
+
+    padding: 5px;
+    background-color: black;
+    color: white;
+    font-size: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+footer {
+
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 20px 0px;
 }
