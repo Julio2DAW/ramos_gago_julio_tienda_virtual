@@ -159,6 +159,11 @@ main {
     -o-border-radius: 10px;
 }
 
+.oferta-class{
+
+    background-color: red;
+    color: black;
+}
 footer {
 
     background-color: black;

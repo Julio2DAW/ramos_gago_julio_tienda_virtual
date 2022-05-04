@@ -46,6 +46,7 @@ export class VistaProductos{
             let caja = document.createElement('div')
             cajas.appendChild(caja)
             caja.classList.add('caja')
+            caja.onmouseover = this.mostrarOferta.bind(this) //asignar una función
 
             let img = document.createElement('img')
             caja.appendChild(img)
@@ -64,12 +65,29 @@ export class VistaProductos{
             caja.appendChild(button)
             button.textContent = 'Añadir'
             
+            
             button.onclick = this.anadirCarrito.bind(this, producto) 
         }
     }
 
+    mostrarOferta(){
+
+        let divOferta = document.createElement('div')
+        caja.appendChild(divOferta)
+        divOferta.classList
+
+    }
+
     anadirCarrito(producto){
 
+        console.log('Pulsado');
+        console.log(producto);
         this.controlador.anadirCarrito(producto)
+    }
+
+    setNumProductosCarrito(numProducto){
+
+        document.getElementById('menucarrito').textContent = numProducto
+        //console.log(numProducto)
     }
 }
