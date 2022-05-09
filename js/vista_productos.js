@@ -72,10 +72,12 @@ export class VistaProductos{
 
     mostrarOferta(){
 
+        let caja = document.createElement('div')
+        caja.classList.add('caja')
+
         let divOferta = document.createElement('div')
         caja.appendChild(divOferta)
-        divOferta.classList
-
+        divOferta.classList.add('oferta-class')
     }
 
     anadirCarrito(producto){
