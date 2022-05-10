@@ -38,7 +38,7 @@ export class VistaProductos{
          */
 
         let cajas = document.createElement('div')
-        divProducto. appendChild(cajas)
+        divProducto.appendChild(cajas)
         cajas.classList.add('cajas')
 
         for (let producto of productos) {
@@ -48,6 +48,11 @@ export class VistaProductos{
             caja.classList.add('caja')
             caja.onmouseover = this.mostrarOferta.bind(this) //asignar una función
 
+            /**
+            caja.onmouseover = function(){
+                console.log('Hola JavaScript');
+            }
+            */
             let img = document.createElement('img')
             caja.appendChild(img)
             img.src=producto.imagen
@@ -70,7 +75,7 @@ export class VistaProductos{
         }
     }
 
-    mostrarOferta(){
+    mostrarOferta(producto){
 
         let caja = document.createElement('div')
         caja.classList.add('caja')
@@ -78,6 +83,10 @@ export class VistaProductos{
         let divOferta = document.createElement('div')
         caja.appendChild(divOferta)
         divOferta.classList.add('oferta-class')
+
+        let pOferta = document.createElement('p')
+        divOferta.appendChild(pOferta)
+        pOferta.textContent = producto.oferta
     }
 
     anadirCarrito(producto){
