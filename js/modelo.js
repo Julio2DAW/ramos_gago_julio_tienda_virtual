@@ -6,8 +6,7 @@ export class Modelo{
 
         this.productos = []
         this.carrito = []
-        this.cargar()
-        
+        this.cargar() 
     }
 
     cargar(){
@@ -17,7 +16,6 @@ export class Modelo{
         this.productos[2] = new Producto('./img/bmw.jpg', 'BMW Z4', 52.600, 2.000)
         this.productos[3] = new Producto('./img/jaguar.jpg', 'Jaguar F-TYPE', 76.450, 3.500)
         this.productos[4] = new Producto('./img/maserati.jpg', 'Maserati Levante', 98.050, 4.200)
-        
     }
 
     getProductos(){
