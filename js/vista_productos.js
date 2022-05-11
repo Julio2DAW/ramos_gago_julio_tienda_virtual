@@ -52,6 +52,13 @@ export class VistaProductos{
              */
             if (producto.oferta) {
                 caja.onmouseover = this.mostrarOferta.bind(this, producto, caja) //asignar una función
+                caja.onmouseout = this.ocultarOferta.bind(this, caja)
+                /**
+                caja.onmouseout = function () {
+    
+                    console.log('Adios JavaScript');
+                }
+                */
             }
 
             /**
@@ -90,6 +97,13 @@ export class VistaProductos{
         let pOferta = document.createElement('p')
         divOferta.appendChild(pOferta)
         pOferta.textContent = 'Oferta: ' + producto.oferta
+
+    }
+
+    ocultarOferta(caja){
+
+        //Oculta el div de oferta, con remove lo eliminio.
+        caja.getElementsByClassName('oferta-class')[0].remove()
     }
 
     anadirCarrito(producto){
