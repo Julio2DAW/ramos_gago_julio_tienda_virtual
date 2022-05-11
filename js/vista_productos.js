@@ -46,7 +46,13 @@ export class VistaProductos{
             let caja = document.createElement('div')
             cajas.appendChild(caja)
             caja.classList.add('caja')
-            caja.onmouseover = this.mostrarOferta.bind(this) //asignar una función
+
+            /**
+             * Solo muestra los productos que se encuentran en oferta.
+             */
+            if (producto.oferta) {
+                caja.onmouseover = this.mostrarOferta.bind(this, producto, caja) //asignar una función
+            }
 
             /**
             caja.onmouseover = function(){
@@ -75,10 +81,7 @@ export class VistaProductos{
         }
     }
 
-    mostrarOferta(producto){
-
-        let caja = document.createElement('div')
-        caja.classList.add('caja')
+    mostrarOferta(producto, caja){
 
         let divOferta = document.createElement('div')
         caja.appendChild(divOferta)
@@ -86,7 +89,7 @@ export class VistaProductos{
 
         let pOferta = document.createElement('p')
         divOferta.appendChild(pOferta)
-        pOferta.textContent = producto.oferta
+        pOferta.textContent = 'Oferta: ' + producto.oferta
     }
 
     anadirCarrito(producto){

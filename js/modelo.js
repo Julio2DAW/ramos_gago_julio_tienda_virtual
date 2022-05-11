@@ -11,11 +11,11 @@ export class Modelo{
 
     cargar(){
 
-        this.productos[0] = new Producto('./img/audi.jpg', 'Audi RS 3 Ranchera', 78.840, 2.000)
-        this.productos[1] = new Producto('./img/mercedes.jpg', 'Mercedes GLE Coupé', 91.644, 4.000)
-        this.productos[2] = new Producto('./img/bmw.jpg', 'BMW Z4', 52.600, 2.000)
-        this.productos[3] = new Producto('./img/jaguar.jpg', 'Jaguar F-TYPE', 76.450, 3.500)
-        this.productos[4] = new Producto('./img/maserati.jpg', 'Maserati Levante', 98.050, 4.200)
+        this.productos[0] = new Producto('./img/audi.jpg', 'Audi RS 3 Ranchera', 78.840, true)
+        this.productos[1] = new Producto('./img/mercedes.jpg', 'Mercedes GLE Coupé', 91.644, false)
+        this.productos[2] = new Producto('./img/bmw.jpg', 'BMW Z4', 52.600, true)
+        this.productos[3] = new Producto('./img/jaguar.jpg', 'Jaguar F-TYPE', 76.450, false)
+        this.productos[4] = new Producto('./img/maserati.jpg', 'Maserati Levante', 98.050, false)
     }
 
     getProductos(){
