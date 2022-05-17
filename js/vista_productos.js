@@ -84,7 +84,7 @@ export class VistaProductos{
             button.textContent = 'Añadir'
             
             
-            button.onclick = this.anadirCarrito.bind(this, producto) 
+            button.onclick = this.anadirCarrito.bind(this, producto)
         }
     }
 
@@ -108,8 +108,8 @@ export class VistaProductos{
 
     anadirCarrito(producto){
 
-        console.log('Pulsado');
-        console.log(producto);
+        //console.log('Pulsado');
+        //console.log(producto);
         this.controlador.anadirCarrito(producto)
     }
 
