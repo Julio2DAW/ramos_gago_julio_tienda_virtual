@@ -4,7 +4,9 @@ export class VistaCarrito{
 
         this.controlador = controlador
         document.getElementById('verProductos').onclick = this.verProductos.bind(this)
-        document.getElementById('idReg').onclick = this.validarNIF.bind(this)
+        this.validaciones.bind(this)
+        document.getElementById('idReg').onclick = this.validaciones.bind(this)
+        //document.getElementById('idReg').onclick = this.validarNIF.bind(this)
         //this.cargarProductosCarrito(productos)
     }
     
@@ -24,44 +26,49 @@ export class VistaCarrito{
         this.controlador.verProductos()
     }
 
-    validarNIF(dni){
+
+    validaciones(){
+
+        this.validarNIF.bind(this)
+        this.validacionEdad.bind(this)
+    }
+    
+    validarNIF(){
 
         dni = document.getElementById('idNIF').value
 
         var numero, letr, letra, expresion_regular_dni
-        expresion_regular_dni = /^\d{8}[a-zA-Z]$/;
+        expresion_regular_dni = /^\d{8}[a-zA-Z]$/
         
         if(expresion_regular_dni.test (dni) == true){
-
-            numero = dni.substr(0,dni.length-1);
-            letr = dni.substr(dni.length-1,1);
-            numero = numero % 23;
-            letra='TRWAGMYFPDXBNJZSQVHLCKET';
-            letra=letra.substring(numero,numero+1);
+            numero = dni.substr(0,dni.length-1)
+            letr = dni.substr(dni.length-1,1)
+            numero = numero % 23
+            letra='TRWAGMYFPDXBNJZSQVHLCKET'
+            letra=letra.substring(numero,numero+1)
 
             if (letra!=letr.toUpperCase()){
 
-                alert('Dni erroneo, la letra del NIF no se corresponde');
+                alert('Dni erroneo, la letra del NIF no se corresponde')
             }else{
 
-                console.log('Dni correcto');
+                true
             }
         }else{
             
-            alert('Dni erroneo, formato no válido');
+            alert('Dni erroneo, formato no válido')
         }
     }
-    /*
-    validacionEdad(fecha){
 
-        fecha = document.getElementById('idFechaNac').value
+    validacionEdad(){
+
+        fecha = document.getElementById('idFechNac').value
         let fechaActual = new Date()
         let fechaNac = new Date(fecha)
         //El método getFullYear() devuelve el año de la fecha indicada acorde a la hora local.
         let edadAnio = fechaActual.getFullYear() - fechaNac.getFullYear()
         //El método getMonth() devuelve el mes del objeto Date según la hora local, donde el número cero indica el primer mes del año.
         let edadMes = fechaActual.getMonth() - fechaNac.getMonth()
-
         if(edadMes<0 || (edadMes === 0 && fechaActual.getDate() < fechaNac.getDate())){
 
             edadAnio --
@@ -75,7 +82,6 @@ export class VistaCarrito{
             window.alert("Menor de 18 años")
         }   
     }
-    */
 
     /*cargarProductosCarrito(productos){
 
