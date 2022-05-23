@@ -4,9 +4,7 @@ export class VistaCarrito{
 
         this.controlador = controlador
         document.getElementById('verProductos').onclick = this.verProductos.bind(this)
-        this.validaciones.bind(this)
         document.getElementById('idReg').onclick = this.validaciones.bind(this)
-        //document.getElementById('idReg').onclick = this.validarNIF.bind(this)
         //this.cargarProductosCarrito(productos)
     }
     
@@ -29,11 +27,11 @@ export class VistaCarrito{
 
     validaciones(){
 
-        this.validarNIF.bind(this)
-        this.validacionEdad.bind(this)
+        this.validarNIF()
+        this.validacionEdad()
     }
     
-    validarNIF(){
+    validarNIF(dni){
 
         dni = document.getElementById('idNIF').value
 
@@ -60,7 +58,7 @@ export class VistaCarrito{
         }
     }
 
-    validacionEdad(){
+    validacionEdad(fecha){
 
         fecha = document.getElementById('idFechNac').value
         let fechaActual = new Date()
@@ -76,7 +74,7 @@ export class VistaCarrito{
        
         if(edadAnio>=18){
 
-            window.alert("Mayor de 18 años")
+            console.log("Mayor de 18 años")
         }else{
 
             window.alert("Menor de 18 años")
