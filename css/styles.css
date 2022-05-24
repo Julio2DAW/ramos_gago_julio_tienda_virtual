@@ -208,6 +208,11 @@ main {
     border-color: gray;
 }
 
+#producto-carrito{
+
+    display: none;
+}
+
 footer {
 
     background-color: black;

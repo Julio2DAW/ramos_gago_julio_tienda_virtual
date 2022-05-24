@@ -30,6 +30,7 @@ export class VistaCarrito{
         this.validacionEdad()
 
         document.getElementById('div-form').style.display = 'none'
+        document.getElementById('producto-carrito').style.display = 'block'
     }
     
     validarNIF(dni){
@@ -82,10 +83,12 @@ export class VistaCarrito{
         }   
     }
 
-    /*cargarProductosCarrito(productos){
+    recogerCarrito(producto){
+
+        document.getElementById('producto-carrito').textContent = producto
 
         let cajas = document.createElement('div')
-        divProducto.appendChild(cajas)
+        producto-carrito.appendChild(cajas)
         cajas.classList.add('cajas')
 
         for (let producto of productos) {
@@ -106,5 +109,5 @@ export class VistaCarrito{
             caja.appendChild(p2)
             p2.textContent = producto.precio
         }
-    }*/
+    }
 }
