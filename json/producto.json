@@ -1,0 +1,32 @@
+[
+    {
+        "imagen": "./img/audi.jpg",
+        "nombre": "Audi RS 3 Ranchera",
+        "precio": 78.840,
+        "oferta": true
+    },
+    {
+        "imagen": "./img/mercedes.jpg",
+        "nombre": "Mercedes GLE Coupé",
+        "precio": 91.644,
+        "oferta": false
+    },
+    {
+        "imagen": "../img/bmw.jpg",
+        "nombre": "BMW Z4",
+        "precio": 52.600,
+        "oferta": true
+    },
+    {
+        "imagen": "./img/jaguar.jpg",
+        "nombre": "Jaguar F-TYPE",
+        "precio": 76.450,
+        "oferta": false
+    },
+    {
+        "imagen": "./img/maserati.jpg",
+        "nombre": "Maserati Levante",
+        "precio": 98.050,
+        "oferta": false
+    }
+]
