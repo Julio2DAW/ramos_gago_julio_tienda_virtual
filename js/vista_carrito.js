@@ -24,11 +24,12 @@ export class VistaCarrito{
         this.controlador.verProductos()
     }
 
-
     validaciones(){
 
         this.validarNIF()
         this.validacionEdad()
+
+        document.getElementById('div-form').style.display = 'none'
     }
     
     validarNIF(dni){
