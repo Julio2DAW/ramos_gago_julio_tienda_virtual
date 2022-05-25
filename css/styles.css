@@ -213,6 +213,44 @@ main {
     display: none;
 }
 
+.cajas2 {
+
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.caja2 {
+
+    text-align: center;
+    margin: 20px;
+    padding-bottom: 10px;
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.caja2 img {
+
+    width: 200px;
+    height: 100px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.caja2 p{
+
+    margin-top: 10px;
+}
+
 footer {
 
     background-color: black;
