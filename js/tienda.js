@@ -18,6 +18,12 @@ class Tienda{
         this.vistaProductos.mostrar(true)
     }
 
+    crearVista(){
+
+        //Crear la vista aquí   
+        //Iniciar recibe del json los datos del modelo
+    }
+
     verCarrito(){
 
         this.vistaProductos.mostrar(false)
