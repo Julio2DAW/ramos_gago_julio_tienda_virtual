@@ -34,12 +34,7 @@ class Tienda{
 
         this.modelo.anadirCarrito(producto)
         this.vistaProductos.setNumProductosCarrito(this.modelo.carrito.length)
-    }
-
-    recogerCarrito(producto){
-
-        this.modelo.anadirCarrito(producto)
-        this.vistaCarrito.recogerCarrito(this.modelo.carrito.length)
+        this.vistaCarrito.recogerCarrito(producto)
     }
 }
 

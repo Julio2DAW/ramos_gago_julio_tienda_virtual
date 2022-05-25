@@ -30,7 +30,7 @@ export class VistaCarrito{
         this.validacionEdad()
 
         document.getElementById('div-form').style.display = 'none'
-        document.getElementById('producto-carrito').style.display = 'block'
+        document.getElementById('producto_carrito').style.display = 'block'
     }
     
     validarNIF(dni){
@@ -83,31 +83,47 @@ export class VistaCarrito{
         }   
     }
 
+    
     recogerCarrito(producto){
 
-        document.getElementById('producto-carrito').textContent = producto
+        /*
 
-        let cajas = document.createElement('div')
-        producto-carrito.appendChild(cajas)
-        cajas.classList.add('cajas')
+            <div class="cajas2">
+            <div class="caja2">
+                <img src="img/audi.jpg" alt="Audi RS 3 Sedan" />
+                <p>Audi RS 3 Sedan</p>
+                <p>78.840,00 EUR</p>
+                <p>Unidades: <span>1</span></p>
+            </div>
+            </div>
+        */
 
-        for (let producto of productos) {
+        let cajas2 = document.createElement('div')
+        producto_carrito.appendChild(cajas2)
+        cajas2.classList.add('cajas2')
 
-            let caja = document.createElement('div')
-            cajas.appendChild(caja)
-            caja.classList.add('caja')
+            let caja2 = document.createElement('div')
+            cajas2.appendChild(caja2)
+            caja2.classList.add('caja2')
 
-            let img = document.createElement('img')
-            caja.appendChild(img)
-            img.src=producto.imagen
-            
-            let p = document.createElement('p')
-            caja.appendChild(p)
-            p.textContent = producto.nombre
+                let img = document.createElement('img')
+                caja2.appendChild(img)
+                img.src=producto.imagen
+                
+                let p = document.createElement('p')
+                caja2.appendChild(p)
+                p.textContent = producto.nombre
 
-            let p2 = document.createElement('p')
-            caja.appendChild(p2)
-            p2.textContent = producto.precio
-        }
+                let p2 = document.createElement('p')
+                caja2.appendChild(p2)
+                p2.textContent = producto.precio
+
+                let p3 = document.createElement('p')
+                caja2.appendChild(p3)
+                p3.textContent = "Unidades: "
+
+                    //let span = document.createElement('span')
+                    //p3.appendChild()
+
     }
 }

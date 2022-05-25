@@ -208,7 +208,7 @@ main {
     border-color: gray;
 }
 
-#producto-carrito{
+#producto_carrito{
 
     display: none;
 }
