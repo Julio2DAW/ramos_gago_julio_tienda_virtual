@@ -11,11 +11,16 @@ export class Modelo{
 
     cargar(){
 
+        fetch('./json/producto.json')
+            .then(respuesta => respuesta.json())
+            .then(productos => {console.log(productos)});
+        /*
         this.productos[0] = new Producto('./img/audi.jpg', 'Audi RS 3 Ranchera', 78.840, true)
         this.productos[1] = new Producto('./img/mercedes.jpg', 'Mercedes GLE Coupé', 91.644, false)
         this.productos[2] = new Producto('./img/bmw.jpg', 'BMW Z4', 52.600, true)
         this.productos[3] = new Producto('./img/jaguar.jpg', 'Jaguar F-TYPE', 76.450, false)
         this.productos[4] = new Producto('./img/maserati.jpg', 'Maserati Levante', 98.050, false)
+        */
     }
 
     getProductos(){
