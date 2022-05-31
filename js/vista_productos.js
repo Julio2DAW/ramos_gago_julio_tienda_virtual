@@ -4,7 +4,7 @@ export class VistaProductos{
 
         this.controlador = controlador
         document.getElementById('verCarrito').onclick = this.verCarrito.bind(this);
-        this.cargarProductos(this.cargarProductos(productos))
+        this.cargarProductos(productos)
     }
 
     mostrar(ver){

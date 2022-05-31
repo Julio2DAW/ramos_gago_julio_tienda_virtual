@@ -9,10 +9,11 @@ class Tienda{
         window.onload = this.iniciar.bind(this)
     }
 
-    iniciar(){
+    async iniciar(){
 
         this.modelo = new Modelo()
-        this.modelo.cargar()
+        //Espera el resultado de la promesa
+        await this.modelo.cargar()
         this.vistaProductos = new VistaProductos(this, this.modelo.getProductos())
         this.vistaCarrito = new VistaCarrito(this)
 

@@ -4,16 +4,19 @@ export class Modelo{
 
     constructor(){
 
-        this.productos = []
         this.carrito = []
-        this.cargar() 
+        this.productos = []
+        //this.cargar()
+        console.log(this.cargar());
     }
 
     async cargar(){
 
         await fetch('./json/producto.json')
             .then(respuesta => respuesta.json())
-            .then(producto => {this.productos = producto})
+            .then(producto => {console.log(producto)
+                this.setProductos(producto)
+            })
             .catch(error => console.log(error))
             /* console.log(respuesta);
             return respuesta */
@@ -29,6 +32,11 @@ export class Modelo{
     getProductos(){
 
         return this.productos
+    }
+
+    setProductos(producto){
+
+        this.productos = producto
     }
 
     anadirCarrito(producto){

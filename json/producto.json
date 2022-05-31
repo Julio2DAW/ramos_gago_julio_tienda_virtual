@@ -12,7 +12,7 @@
         "oferta": false
     },
     {
-        "imagen": "../img/bmw.jpg",
+        "imagen": "./img/bmw.jpg",
         "nombre": "BMW Z4",
         "precio": 52.600,
         "oferta": true
