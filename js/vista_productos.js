@@ -4,7 +4,7 @@ export class VistaProductos{
 
         this.controlador = controlador
         document.getElementById('verCarrito').onclick = this.verCarrito.bind(this);
-        this.cargarProductos(productos)
+        this.cargarProductos(this.cargarProductos(productos))
     }
 
     mostrar(ver){
@@ -41,7 +41,7 @@ export class VistaProductos{
         divProducto.appendChild(cajas)
         cajas.classList.add('cajas')
 
-        for (let producto of productos) {
+        productos.forEach(producto => {
 
             let caja = document.createElement('div')
             cajas.appendChild(caja)
@@ -85,7 +85,7 @@ export class VistaProductos{
             
             
             button.onclick = this.anadirCarrito.bind(this, producto)
-        }
+        });
     }
 
     mostrarOferta(producto, caja){

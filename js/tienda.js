@@ -12,16 +12,18 @@ class Tienda{
     iniciar(){
 
         this.modelo = new Modelo()
+        this.modelo.cargar()
         this.vistaProductos = new VistaProductos(this, this.modelo.getProductos())
         this.vistaCarrito = new VistaCarrito(this)
 
         this.vistaProductos.mostrar(true)
     }
 
-    crearVista(){
+    async crearVista(){
 
-        //Crear la vista aquí   
-        //Iniciar recibe del json los datos del modelo
+        let datos = await this.modelo.cargar()
+        console.log(datos)
+        return datos
     }
 
     verCarrito(){
