@@ -1,5 +1,18 @@
+/**
+ * @file vista_carrito.js
+ * @brief Vista de carrito de compras => (Vista)
+ * @author Julio Antonio Ramos Gago <jramosgago.guadalupe@alumnado.fundacionloyola.net>
+ * @version 1.0
+ * @license GPL-3.0-or-later
+ */
+
 export class VistaCarrito{
 
+    /**
+     * Constructor de la clase VistaCarrito
+     * @param {*} controlador 
+     * @param {*} productos 
+     */
     constructor(controlador, productos){
 
         this.controlador = controlador
@@ -8,6 +21,10 @@ export class VistaCarrito{
         //this.cargarProductosCarrito(productos)
     }
     
+    /**
+     * Método para ocultar o no el carrito de productos
+     * @param {*} ver 
+     */
     mostrar(ver){
 
         if(ver){
@@ -19,27 +36,51 @@ export class VistaCarrito{
         }
     }
 
+    /**
+     * Método para cargar los productos del carrito
+     */
     verProductos(){
 
         this.controlador.verProductos()
     }
 
+    /**
+     * Método para comprobar que todos los campos del formulario estén correctos
+     * y oculte el formulario de registro para mostrar los productos del carrito
+     */
     validaciones(){
 
-        this.validarNIF()
-        this.validacionEdad()
+        this.validarNick() //Validación del nick
+        this.validarEmail() //Validación del email
+        this.validarPassword() //Validación de la contraseña
+        this.validarNIF() //Validación del dni
+        this.validacionEdad() //Validación de la edad
 
         document.getElementById('div-form').style.display = 'none'
-        document.getElementById('producto_carrito').style.display = 'block'
+        document.getElementById('producto_carrito').style.display = 'block'  
+        /* if (this.validarNick(true) && this.validarEmail(true) && this.validarPassword(true) && this.validarNIF(true) && this.validacionEdad(true)){
+
+            document.getElementById('div-form').style.display = 'none'
+            document.getElementById('producto_carrito').style.display = 'block'            
+        } else {
+            
+            document.getElementById('div-form').style.display = 'block'
+            document.getElementById('producto_carrito').style.display = 'none'
+        } */
     }
     
+    /**
+     * Método para validar el dni
+     * @param {*} dni 
+     */
     validarNIF(dni){
 
         dni = document.getElementById('idNIF').value
 
         var numero, letr, letra, expresion_regular_dni
-        expresion_regular_dni = /^\d{8}[a-zA-Z]$/
+        expresion_regular_dni = /^\d{8}[a-zA-Z]$/ //Expresión regular para validar el dni
         
+        //Comprobamos que el dni sea correcto
         if(expresion_regular_dni.test (dni) == true){
             numero = dni.substr(0,dni.length-1)
             letr = dni.substr(dni.length-1,1)
@@ -60,6 +101,10 @@ export class VistaCarrito{
         }
     }
 
+    /**
+     * Método para validar la edad
+     * @param {*} fecha 
+     */
     validacionEdad(fecha){
 
         fecha = document.getElementById('idFechNac').value
@@ -83,7 +128,65 @@ export class VistaCarrito{
         }   
     }
 
-    
+    /**
+     * Método para validar el nick
+     * @param {*} nombre 
+     */
+    validarNick(nombre){
+
+        nombre = document.getElementById('idNick').value
+
+        if(nombre.length == 0){
+
+            alert('Nick no indicado')
+        }else{
+
+            true
+        }
+    }
+
+    /**
+     * Método para validar el email
+     * @param {*} correo 
+     */
+    validarEmail(correo){
+
+        correo = document.getElementById('idEmail').value
+
+        //Expresión regular para validar el email
+        var expresion_regular_email = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
+
+        if(expresion_regular_email.test(correo) == true){
+
+            true
+        }else{
+
+            alert('Email erroneo')
+        }
+    }
+
+    /**
+     * Método para validar la password
+     * @param {*} contrasena 
+     */
+    validarPassword(contrasena){
+
+        contrasena = document.getElementById('idPassword').value
+
+        if(contrasena.length >= 6){
+
+            true
+        }else{
+                
+            alert('La contraseña debe tener al menos 6 caracteres')
+        }
+    }
+
+    /**
+     * Método para cargar los productos del carrito
+     * Le pasamos el array de productos del carrito y lo mostramos en el carrito
+     * @param {*} producto 
+     */
     recogerCarrito(producto){
 
         /*
@@ -117,13 +220,5 @@ export class VistaCarrito{
                 let p2 = document.createElement('p')
                 caja2.appendChild(p2)
                 p2.textContent = producto.precio
-
-                let p3 = document.createElement('p')
-                caja2.appendChild(p3)
-                p3.textContent = "Unidades: "
-
-                    //let span = document.createElement('span')
-                    //p3.appendChild()
-
     }
 }

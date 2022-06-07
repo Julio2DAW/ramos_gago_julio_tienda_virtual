@@ -1,7 +1,18 @@
+/**
+ * @file modelo.js
+ * @brief Modelo => (Modelo)
+ * @author Julio Antonio Ramos Gago <jramosgago.guadalupe@alumnado.fundacionloyola.net>
+ * @version 1.0
+ * @license GPL-3.0-or-later
+ */
+
 import {Producto} from "./productos.js"
 
 export class Modelo{
 
+    /**
+     * Constructor de la clase Modelo
+     */
     constructor(){
 
         this.carrito = []
@@ -10,6 +21,9 @@ export class Modelo{
         console.log(this.cargar());
     }
 
+    /**
+     * Método para cargar los productos cogidos del JSON
+     */
     async cargar(){
 
         await fetch('./json/producto.json')
@@ -29,16 +43,28 @@ export class Modelo{
         
     }
 
+    /**
+     * Método para obtener los productos
+     * @returns this.productos
+     */
     getProductos(){
 
         return this.productos
     }
 
+    /**
+     * Método para coger los productos
+     * @param {*} producto 
+     */
     setProductos(producto){
 
         this.productos = producto
     }
 
+    /**
+     * Método para añadir un producto al carrito
+     * @param {*} producto 
+     */
     anadirCarrito(producto){
 
         this.carrito.push(producto)

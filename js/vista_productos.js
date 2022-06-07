@@ -1,5 +1,18 @@
+/**
+ * @file vista_productos.js
+ * @brief Vista de productos => (Vista)
+ * @author Julio Antonio Ramos Gago <jramosgago.guadalupe@alumnado.fundacionloyola.net>
+ * @version 1.0
+ * @license GPL-3.0-or-later
+ */
+
 export class VistaProductos{
 
+    /**
+     * Constructor de la clase VistaProductos
+     * @param {*} controlador 
+     * @param {*} productos 
+     */
     constructor(controlador, productos){
 
         this.controlador = controlador
@@ -7,6 +20,10 @@ export class VistaProductos{
         this.cargarProductos(productos)
     }
 
+    /**
+     * Método para ocultar o no los productos
+     * @param {*} ver 
+     */
     mostrar(ver){
 
         if(ver){
@@ -18,11 +35,19 @@ export class VistaProductos{
         }
     }
 
+    /**
+     * Método para mostrar el carrito
+     */
     verCarrito(){
 
         this.controlador.verCarrito()
     }
 
+    /**
+     * Método para cargar los productos
+     * Le pasa el array de productos y los mostramos
+     * @param {*} productos 
+     */
     cargarProductos(productos){
 
         /**
@@ -41,6 +66,7 @@ export class VistaProductos{
         divProducto.appendChild(cajas)
         cajas.classList.add('cajas')
 
+        //Recorro el array de productos del JSON
         productos.forEach(producto => {
 
             let caja = document.createElement('div')
@@ -88,6 +114,11 @@ export class VistaProductos{
         });
     }
 
+    /**
+     * Método para mostrar la oferta de los productos cuando pasamos el ratón por encima
+     * @param {*} producto 
+     * @param {*} caja 
+     */
     mostrarOferta(producto, caja){
 
         let divOferta = document.createElement('div')
@@ -100,12 +131,20 @@ export class VistaProductos{
 
     }
 
+    /**
+     * Método para ocultar la oferta de los productos cuando quitamos el ratón de encima
+     * @param {*} caja 
+     */
     ocultarOferta(caja){
 
         //Oculta el div de oferta, con remove lo eliminio.
         caja.getElementsByClassName('oferta-class')[0].remove()
     }
 
+    /**
+     * Método para añadir un producto al carrito
+     * @param {*} producto 
+     */
     anadirCarrito(producto){
 
         //console.log('Pulsado');
@@ -113,6 +152,10 @@ export class VistaProductos{
         this.controlador.anadirCarrito(producto)
     }
 
+    /**
+     * Método para mostrar en el carrito el total de los productos seleccionados
+     * @param {*} numProducto 
+     */
     setNumProductosCarrito(numProducto){
 
         document.getElementById('menucarrito').textContent = numProducto
