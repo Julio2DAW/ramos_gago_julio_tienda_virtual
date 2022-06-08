@@ -6,6 +6,9 @@
  * @license GPL-3.0-or-later
  */
 
+/**
+ * @class Producto
+ */
 export class Producto{
 
     /**
