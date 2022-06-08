@@ -18,7 +18,7 @@ export class Modelo{
         this.carrito = []
         this.productos = []
         //this.cargar()
-        console.log(this.cargar());
+       // console.log(this.cargar());
     }
 
     /**
@@ -28,8 +28,8 @@ export class Modelo{
 
         await fetch('./json/producto.json')
             .then(respuesta => respuesta.json())
-            .then(producto => {console.log(producto)
-                this.setProductos(producto)
+            .then(productos => {console.log(productos)
+                this.setProductos(productos)
             })
             .catch(error => console.log(error))
             /* console.log(respuesta);

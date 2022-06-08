@@ -50,28 +50,29 @@ export class VistaCarrito{
      */
     validaciones(){
 
+        /* 
         this.validarNick() //Validación del nick
         this.validarEmail() //Validación del email
         this.validarPassword() //Validación de la contraseña
         this.validarNIF() //Validación del dni
-        this.validacionEdad() //Validación de la edad
+        this.validacionEdad() //Validación de la edad 
+        */
 
-        document.getElementById('div-form').style.display = 'none'
-        document.getElementById('producto_carrito').style.display = 'block'  
-        /* if (this.validarNick(true) && this.validarEmail(true) && this.validarPassword(true) && this.validarNIF(true) && this.validacionEdad(true)){
+        if(this.validarNick() && this.validarEmail() && this.validarPassword() && this.validarNIF() && this.validacionEdad()){
 
+            true
             document.getElementById('div-form').style.display = 'none'
-            document.getElementById('producto_carrito').style.display = 'block'            
-        } else {
-            
+            document.getElementById('producto_carrito').style.display = 'block'  
+        }else{
+
             document.getElementById('div-form').style.display = 'block'
-            document.getElementById('producto_carrito').style.display = 'none'
-        } */
+        }
     }
     
     /**
      * Método para validar el dni
-     * @param {*} dni 
+     * @param {*} dni
+     * @returns true false
      */
     validarNIF(dni){
 
@@ -91,19 +92,22 @@ export class VistaCarrito{
             if (letra!=letr.toUpperCase()){
 
                 alert('Dni erroneo, la letra del NIF no se corresponde')
+                return false
             }else{
 
-                true
+                return true
             }
         }else{
             
             alert('Dni erroneo, formato no válido')
+            return false
         }
     }
 
     /**
      * Método para validar la edad
      * @param {*} fecha 
+     * @returns true false
      */
     validacionEdad(fecha){
 
@@ -121,16 +125,19 @@ export class VistaCarrito{
        
         if(edadAnio>=18){
 
-            console.log("Mayor de 18 años")
+            //console.log("Mayor de 18 años")
+            return true
         }else{
 
             window.alert("Menor de 18 años")
+            return false
         }   
     }
 
     /**
      * Método para validar el nick
-     * @param {*} nombre 
+     * @param {*} nombre
+     * @returns true false
      */
     validarNick(nombre){
 
@@ -139,15 +146,17 @@ export class VistaCarrito{
         if(nombre.length == 0){
 
             alert('Nick no indicado')
+            return false
         }else{
 
-            true
+            return true
         }
     }
 
     /**
      * Método para validar el email
-     * @param {*} correo 
+     * @param {*} correo
+     * @returns true false
      */
     validarEmail(correo){
 
@@ -158,16 +167,18 @@ export class VistaCarrito{
 
         if(expresion_regular_email.test(correo) == true){
 
-            true
+            return true
         }else{
 
             alert('Email erroneo')
+            return false
         }
     }
 
     /**
      * Método para validar la password
-     * @param {*} contrasena 
+     * @param {*} contrasena
+     * @returns true false
      */
     validarPassword(contrasena){
 
@@ -175,10 +186,11 @@ export class VistaCarrito{
 
         if(contrasena.length >= 6){
 
-            true
+            return true
         }else{
                 
             alert('La contraseña debe tener al menos 6 caracteres')
+            return false
         }
     }
 
